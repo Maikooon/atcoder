@@ -1,4 +1,4 @@
-a, b = list(map(int,input().split()))
+a, b = list(map(int, input().split()))
 
 ans = 0
 
@@ -10,7 +10,7 @@ ans = 0
 """
 a_ans = []
 b_ans = []
-true = [1,2,4]
+true = [1, 2, 4]
 
      
 def calc_score(a, a_ans):
