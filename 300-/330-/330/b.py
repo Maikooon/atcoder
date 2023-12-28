@@ -1,4 +1,4 @@
-# 実行時間超過だが答えはおk
+# 実行時間超過だが答えはおkkk
 n, l, r = list(map(int, input().split()))
 
 a = list(map(int, input().split()))
