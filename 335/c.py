@@ -1,4 +1,5 @@
-import copy
+
+import sys
 n, q = list(map(int, input().split()))
 
 x_pos = 0
@@ -10,36 +11,33 @@ y_pos_list = [0] * n
 for i in range(n):
     x_pos_list.append(i+1)
     
-new_xpos = x_pos_list.copy()
-new_ypos = y_pos_list.copy()
-
-print(new_xpos)
-
+result = []
 num = 0
 
-for i in range(q):
-    p, q = list(map(str, input().split()))
+for _ in range(q):
+    query = next(sys.stdin)
+    p, q = query.split()
+    new_xpos = x_pos_list.copy()
+    new_ypos = y_pos_list.copy()
     # 移動クエリ
     if p == '1':
-        num += 1
         if q == 'R':
-            x_pos_list[num-1] += 1
+            x_pos_list[0] += 1
         elif q == 'L':
-            x_pos_list[num-1] -= 1
+            x_pos_list[0] -= 1
         elif q == 'U':
-            y_pos_list[num-1] += 1
+            y_pos_list[0] += 1
         elif q == 'D':
-            y_pos_list[num-1] -= 1
-        # 動くたびにそれ以外の座標の値が更新される
-        for m in range(num, n):
-            print(m)
+            y_pos_list[0] -= 1
+        for m in range(1, n):
             x_pos_list[m] = new_xpos[m-1]
             y_pos_list[m] = new_ypos[m-1]
-            print(x_pos_list)
-            print(y_pos_list)
-
     # 出力クエリ
     else:
-        print(x_pos_list[int(q)-1], y_pos_list[int(q)-1])
-    print(x_pos_list)
-    print(y_pos_list)
+        num += 1
+        result.append(x_pos_list[int(q)-1])
+        result.append(y_pos_list[int(q)-1])
+
+for i in range(0, len(result), 2):
+    print(result[i], result[i+1])
+    #実行時間超過
