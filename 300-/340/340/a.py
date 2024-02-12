@@ -7,3 +7,6 @@ while result < b:
     result = a + d*(i-1)
     print(result, end=' ')
     i += 1
+
+
+# 何が違うのかよくわからない
