@@ -39,7 +39,7 @@ for i in range(n-1):
         # print(total[i], total[j])
         isround = []
         isround += total[j]
-        isround += total[i]
+        isround += total[]
         # print(isround)
 
         # ここで回文か否かのチェックを行う
